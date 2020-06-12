@@ -43,9 +43,4 @@ public class PropertyServiceImpl implements PropertyService {
 		return PROPERTIES.stream().filter(p -> p.getId() == id).findFirst();
 	}
 	
-	@Override
-	public void deleteAllProperties() {
-		repository.deleteAll();
-	}
-	
 }

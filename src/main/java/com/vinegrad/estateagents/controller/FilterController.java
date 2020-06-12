@@ -39,6 +39,7 @@ public class FilterController {
 		model.addAttribute("properties", properties);
 		model.addAttribute("filter", filter.toString());
 		model.addAttribute("sortingTypes", SortingType.values());
+		model.addAttribute("LET", LET);
 		LAST_FILTER_REQUIREMENT = filter;
 		FILTER = filter.toString();
 		return "properties";

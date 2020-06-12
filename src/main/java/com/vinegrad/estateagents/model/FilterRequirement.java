@@ -24,6 +24,11 @@ public class FilterRequirement {
 		if(location != null && !location.equals("")) {
 			predicate = predicate.and(p -> p.getLocation().equalsIgnoreCase(location));
 		}
+		if(minPrice > maxPrice) {
+			long temp = minPrice;
+			minPrice = maxPrice;
+			maxPrice = temp;
+		}
 		if(minPrice != 0) {
 			predicate = predicate.and(p -> p.getPrice() >= minPrice);
 		}
@@ -32,6 +37,11 @@ public class FilterRequirement {
 		}
 		if(propertyType != null) {
 			predicate = predicate.and(p -> p.getPropertyType().equals(propertyType));
+		}
+		if(minNumberOfBedrooms > maxNumberOfBedrooms) {
+			int temp = minNumberOfBedrooms;
+			minNumberOfBedrooms = maxNumberOfBedrooms;
+			maxNumberOfBedrooms = temp;
 		}
 		if(minNumberOfBedrooms != 0) {
 			predicate = predicate.and(p -> p.getNumberOfBedrooms() >= minNumberOfBedrooms);

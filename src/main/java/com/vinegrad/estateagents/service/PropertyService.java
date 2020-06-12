@@ -16,5 +16,4 @@ public interface PropertyService {
 
 	void saveAllProperties(List<Property> properties);
 
-	void deleteAllProperties();
 }
